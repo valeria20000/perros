@@ -80,27 +80,25 @@
         <option>Ortofotos</option>
         <option value="1" >Ortofoto 1945 GV</option>
         <option value="2">Ortofoto 1956 GV</option>
-        <option value="3">Ortofoto 1965</option>
-        <option value="4">Ortofoto 1977</option>
-        <option value="5">Ortofoto 1983</option>
-        <option value="6">Ortofoto 1984</option>
-        <option value="7">Ortofoto 1990</option>
-        <option value="8">Ortofoto 1995</option>
-        <option value="9">Ortofoto 2001</option>
-        <option value="10">Ortofoto 2002</option>
-        <option value="11">Ortofoto 2004</option>
-        <option value="12">Ortofoto 2005</option>
-        <option value="13" >Ortofoto 2006</option>
-        <option value="14">Ortofoto 2008</option>
-        <option value="15">Ortofoto 2009</option>
-        <option value="16">Ortofoto 2010</option>
-        <option value="17">Ortofoto 2011</option>
-        <option value="18">Ortofoto 2012</option>
-        <option value="19">Ortofoto 2013</option>
-        <option value="20">Ortofoto 2014</option>
-        <option value="21">Ortofoto 2015</option>
-        <option value="22">Ortofoto 2016</option>
-        <option value="23">Ortofoto 2017</option>
+        <option value="3">Ortofoto 1977</option>
+        <option value="4">Ortofoto 1984</option>
+        <option value="5">Ortofoto 1990</option>
+        <option value="6">Ortofoto 2001</option>
+        <option value="7">Ortofoto 2002</option>
+        <option value="8">Ortofoto 2004</option>
+        <option value="9">Ortofoto 2005</option>
+        <option value="10" >Ortofoto 2006</option>
+        <option value="11" >Ortofoto 2007</option>
+        <option value="12">Ortofoto 2008</option>
+        <option value="13">Ortofoto 2009</option>
+        <option value="14">Ortofoto 2010</option>
+        <option value="15">Ortofoto 2011</option>
+        <option value="16">Ortofoto 2012</option>
+        <option value="17">Ortofoto 2013</option>
+        <option value="18">Ortofoto 2014</option>
+        <option value="19">Ortofoto 2015</option>
+        <option value="20">Ortofoto 2016</option>
+        <option value="21">Ortofoto 2017</option>
       </select>
     </div>
     <!-- /Select Ortofoto -->
@@ -158,23 +156,27 @@
 
   <div class="calcite-map calcite-map-absolute">
     <div id="tabContainer" class="tab-content">
+
+        <!-- Barra Herramientas -->
       <div id="mapTab" class="tab-pane fade in active" role="tabpanel">
         <div id="mapViewDiv"></div>
         <div id="topbar">
           <button class="action-button esri-icon-minus" id="distanceButton" type="button"
-            title="Measure distance between two or more points"></button>
+            title="Distancia Parcial"></button>
           <button class="action-button esri-icon-polygon" id="areaButton" type="button"
+            title="Area Superficie"></button>
+          <button class="action-button esri-icon-polyline" id="distanceButton" type="button"
             title="Measure area"></button>
-          <button class="action-button esri-icon-polyline" id="areaButton" type="button"
-            title="Measure area"></button>
-          <button class="action-button  esri-icon-printer" id="areaButton" type="button"
-            title="Measure area"></button>
-          <button class="action-button  esri-icon-zoom-in-magnifying-glass" id="areaButton" type="button"
-            title="Measure area"></button>
-          <button class="action-button  esri-icon-zoom-out-magnifying-glass" id="areaButton" type="button"
-            title="Measure area"></button>
+          <button class="action-button  esri-icon-printer" id="printButton" type="button"
+            title="Imprimir"></button>
+          <button class="action-button  esri-icon-zoom-in-magnifying-glass" id="zoomButton" type="button"
+            title="Zoom acercar"></button>
+          <button class="action-button  esri-icon-zoom-out-magnifying-glass" id="zoomoutButton" type="button"
+            title="Zoom alejar"></button>
         </div>
       </div>
+      <!-- /Barra Herramientas -->
+
       <div id="sceneTab" class="tab-pane fade" role="tabpanel">
   <!--sceneViewDiv -->
         <div id="sceneViewDiv">

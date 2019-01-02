@@ -93,31 +93,49 @@ require([
   });
 
   const layerTouristInfo = new WMSLayer("http://www.geobilbao.eus/WMS_Turismo/wmservice.aspx?request=getCapabilities&service=wms");
- 
-  var ortofotos = ['http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2017_AMPLIADO/MapServer',
-                    'http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1945/MapServer',
-                   'http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1984/MapServer'];
 
-    selectOrtofotos = function selectOrtofotos(option){
-    switch(option){
-      case 1:
-      basemapOrtofoto = new Basemap({
-        baseLayers: [ new TileLayer(ortofotos[1])]
-      });
-      break;
-      case 2:
-      break;
-      case 3:
-      break;
+  //ORTOFOTOS
+  var ortofotos = [];
+  ortofotos[0]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1945/MapServer";
+  ortofotos[1]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1956/MapServer";
+  ortofotos[2]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1977/MapServer";
+  ortofotos[3]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1984/MapServer";
+  ortofotos[4]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_1990/MapServer";
+  ortofotos[5]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2001/MapServer";
+  ortofotos[6]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2002/MapServer";
+  ortofotos[7]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2004/MapServer";
+  ortofotos[8]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2005/MapServer";
+  ortofotos[9]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2006/MapServer";
+  ortofotos[10]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2007/MapServer";
+  ortofotos[11]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2008/MapServer";
+  ortofotos[12]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2009/MapServer";
+  ortofotos[13]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2010/MapServer";
+  ortofotos[14]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2011/MapServer";
+  ortofotos[15]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2012/MapServer";
+  ortofotos[16]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2013_AMPLIADO/MapServer";
+  ortofotos[17]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2014_AMPLIADO/MapServer";
+  ortofotos[18]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2015_AMPLIADO/MapServer";
+  ortofotos[19]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2016_AMPLIADO/MapServer";
+  ortofotos[20]  = "http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2017_AMPLIADO/MapServer";
 
+  selectOrtofotos = function selectOrtofotos(option){
+    let basemapOrtofoto = new Basemap();
+    if(option){
+      basemapOrtofoto.baseLayers = [new TileLayer(ortofotos[option])];
+    }else{
+      basemapOrtofoto.baseLayers = [new TileLayer(ortofotos[21])];
     }
+
+    map.basemap = basemapOrtofoto;
   }
 
-  const basemapOrtofoto = new Basemap({
+  let basemapOrtofoto = new Basemap({
     baseLayers: [
       new TileLayer("http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2017_AMPLIADO/MapServer")
     ]
   });
+
+    // CIERRE ORTOFOTOS
 
   var activeWidget = null;
  
@@ -180,7 +198,7 @@ require([
 
   });
 
-  //Distancia y Area Graficos
+  //Barra Herramientas
 
   app.mapView.ui.add("topbar", "top-right");
   
@@ -228,6 +246,7 @@ function setActiveWidget(type) {
       app.mapView.ui.add(activeWidget, "top-right");
       setActiveButton(document.getElementById('areaButton'));
       break;
+
     case null:
       if (activeWidget) {
         app.mapView.ui.remove(activeWidget);
