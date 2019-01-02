@@ -1,0 +1,102 @@
+EJEMPLO APLICACION 
+http://www.bizkaia.eus/Home2/Temas/DetalleTema.asp?Tem_Codigo=5802
+http://apps.bizkaia.net/GRIT/
+
+ESTILOS BOOTSTRAP 3
+https://getbootstrap.com/docs/3.3/components/#navbar
+https://developers.arcgis.com/javascript/latest/guide/esri-icon-font/index.html
+
+
+
+kml para 3d
+https://developers.arcgis.com/javascript/latest/sample-code/index.html?search=widgets
+
+
+Hacer un visor con el apli 4 de javaScript: TRAFICO
+https://developers.arcgis.com/javascript/latest/sample-code/visualization-sm-multivariate/index.html
+
+2D/3D
+https://developers.arcgis.com/javascript/latest/sample-code/views-switch-2d-3d/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/frameworks-bootstrap/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/scene-environment/index.html
+
+Layers con formato KML (csv...ficheros externos)
+https://developers.arcgis.com/javascript/latest/sample-code/layers-kml/index.html
+
+Ventana de información 
+https://developers.arcgis.com/javascript/latest/sample-code/layers-kml/index.html
+
+Layers :Control de capas
+
+
+Leyenda
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-legend/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-legend-card/index.html
+
+Pintar y medir (Graphics Layers)
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-measurement-3d/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-measurement-2d/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/sketch-geometries/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/draw-line/index.html
+
+Escala, posición ( Sistema de coordenadas)
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-coordinateconversion-custom/index.html
+
+Imprimir el mapa (Print Task)
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-print/index.html
+arcgis bizkaia PrintingTools
+https://arcgis.bizkaia.eus/inspire/rest/services/Utilities/PrintingTools/GPServer
+https://github.com/cmv/cmv-calcite-maps
+
+Localizador
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-locate/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/visualization-vv-color-animate/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-search-3d/index.html
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-track-basic/index.html
+
+
+EJEMPLO COMO FUNCIONAN LAS CAPAS
+https://developers.arcgis.com/javascript/latest/sample-code/layers-mapimagelayer-sublayers/index.html
+
+
+
+busqueda diferentes fuentes
+https://developers.arcgis.com/javascript/latest/sample-code/widgets-search-multiplesource/index.html
+
+
+ESTILOS
+https://github.com/Esri/calcite-maps-styler-template/tree/master/resources
+
+
+********PENDIENTE********
+QUE ME PILLE DOS KML NO SOLO UNO 
+https://developers.arcgis.com/javascript/latest/sample-code/layers-mapimagelayer-sublayers/index.html
+
+QUE ME PILLE LOS KML EN 2D Y 3D
+https://developers.arcgis.com/javascript/latest/sample-code/layers-mapimagelayer-definitionexpression/index.html
+
+ORTOFOTO
+http://www.geo.euskadi.eus/s69-geoser/es/contenidos/informacion/servicios_estandares/es_81/servicios_estandares.html
+http://www.geo.euskadi.eus/s69-bisorea/es/x72aGeoeuskadiWAR/index.jsp
+http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2016_AMPLIADO/MapServer
+POSIBLES SOLUCION PARA SOLUCIONAR EL ORTOFOTO
+ https://enterprise.arcgis.com/es/portal/10.4/use/choose-global-local-scene.htm
+https://gis.stackexchange.com/questions/253528/why-cant-a-mapview-be-instantiated-with-a-specific-spatialreference-arcgis-ja
+https://developers.arcgis.com/javascript/latest/api-reference/esri-geometry-SpatialReference.html
+https://community.esri.com/thread/180949
+
+cargar json
+https://developers.arcgis.com/javascript/latest/sample-code/layers-vectortilelayer/index.html
+
+
+
+WMS
+http://www.geobilbao.eus/GsService/Main?gsservice=apps&gsrequest=getApplication&idapp=GBP
+
+
+
+https://github.com/luisgaldos/Mapas
+http://www.geobilbao.eus/WMS_Catastro/wmservice.aspx
+
+
+

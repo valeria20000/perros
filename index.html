@@ -1,0 +1,293 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <!--
+  ArcGIS API for JavaScript, https://js.arcgis.com
+  For more information about the frameworks-bootstrap sample, read the original sample description at developers.arcgis.com.
+  https://developers.arcgis.com/javascript/latest/sample-code/frameworks-bootstrap/index.html
+  -->
+<title>Calcite Maps and Bootstrap - 4.10</title>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+  <!-- Calcite Bootstrap -->
+  <link rel="stylesheet" href="https://esri.github.io/calcite-maps/dist/css/calcite-maps-bootstrap.min-v0.8.css">
+
+  <!-- Calcite Maps -->
+  <link rel="stylesheet" href="https://esri.github.io/calcite-maps/dist/css/calcite-maps-arcgis-4.x.min-v0.8.css">
+
+  <!-- ArcGIS JS 4 -->
+  <link rel="stylesheet" href="https://js.arcgis.com/4.10/esri/css/main.css">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+
+  </style>
+
+</head>
+
+<body class="calcite calcite-maps calcite-nav-top">
+
+  <!-- Navbar -->
+
+  <nav class="navbar calcite-navbar navbar-fixed-top calcite-text-light calcite-bg-dark">
+      </div>
+    <!-- Menu -->
+    <div class="dropdown calcite-dropdown calcite-text-dark calcite-bg-light"
+      role="presentation">
+      <a class="dropdown-toggle" role="button" aria-haspopup="true"
+        aria-expanded="false">
+        <div class="calcite-dropdown-toggle">
+          <span class="sr-only">Toggle dropdown menu</span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+    
+      </a>
+      <ul class="dropdown-menu">
+        <li class="active"><a class="hidden-md hidden-lg" href="#mapTab"
+            aria-controls="mapTab" role="tab" data-toggle="tab"> Map</a></li>
+        <li><a class="hidden-md hidden-lg" href="#sceneTab" aria-controls="sceneTab"
+            role="tab" data-toggle="tab"> Scene</a></li>
+        <li><a role="button" data-target="#panelBasemaps" aria-haspopup="true"><span
+          class="fas fa-layer-group"></span> Capas</a></li>
+        <li><a role="button" data-target="#panelSettings" aria-haspopup="true"><span
+              class="glyphicon glyphicon-cog"></span> Settings</a></li>
+        <li><a role="button" id="calciteToggleNavbar" aria-haspopup="true"><span
+              class="glyphicon glyphicon-rule"></span> Full Map</a></li>
+        <li><a role="button" id="anadirInfoTurist" aria-haspopup="true"><span
+                class="glyphicon glyphicon-print"></span> Añadir información turística</a></li>
+                
+      </ul>
+    </div>
+ 
+    <!-- Title -->
+    <div class="calcite-title calcite-overflow-hidden">
+      <span class="calcite-title-main">BIZKAIA</span>
+      <span class="calcite-title-divider hidden-xs"></span>
+      <span class="calcite-title-sub hidden-xs">diputacion foral</span>
+    </div>
+
+    
+
+    <!-- Select Ortofoto -->
+    <div  class="calcite-title offset-md-3">
+      <label for="exampleFormControlSelect1"></label>
+      <select class="form-control" id="cargarOrtofotos" onchange="selectOrtofotos(this.value);" >
+        <option>Ortofotos</option>
+        <option value="1" >Ortofoto 1945 GV</option>
+        <option value="2">Ortofoto 1956 GV</option>
+        <option value="3">Ortofoto 1965</option>
+        <option value="4">Ortofoto 1977</option>
+        <option value="5">Ortofoto 1983</option>
+        <option value="6">Ortofoto 1984</option>
+        <option value="7">Ortofoto 1990</option>
+        <option value="8">Ortofoto 1995</option>
+        <option value="9">Ortofoto 2001</option>
+        <option value="10">Ortofoto 2002</option>
+        <option value="11">Ortofoto 2004</option>
+        <option value="12">Ortofoto 2005</option>
+        <option value="13" >Ortofoto 2006</option>
+        <option value="14">Ortofoto 2008</option>
+        <option value="15">Ortofoto 2009</option>
+        <option value="16">Ortofoto 2010</option>
+        <option value="17">Ortofoto 2011</option>
+        <option value="18">Ortofoto 2012</option>
+        <option value="19">Ortofoto 2013</option>
+        <option value="20">Ortofoto 2014</option>
+        <option value="21">Ortofoto 2015</option>
+        <option value="22">Ortofoto 2016</option>
+        <option value="23">Ortofoto 2017</option>
+      </select>
+    </div>
+    <!-- /Select Ortofoto -->
+
+    <!-- Select KML -->
+    <div  class="calcite-title ">
+      <label for="exampleFormControlSelect1"></label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>KML</option>
+        <option>Red Verde</option>
+        <option>Red Naranja</option>
+        <option>Red Roja</option>
+        <option>Red Amarilla</option>
+        <option>Red Azul</option>
+      </select>
+    </div>
+    <!-- /Select KML -->
+
+    
+    <!-- Select WMS -->
+    <div  class="calcite-title ">
+      <label for="exampleFormControlSelect1"></label>
+      <select class="form-control" id="exampleFormControlSelect1">
+        <option>WMS</option>
+        <option>WMS de Cartografía Básica</option>
+        <option>WMS de Agricultura</option>
+        <option>WMS de Planeamiento</option>
+        <option>WMS de Ingurumena</option>
+        <option>WMS de Ura (Agencia Vasca del Agua)</option>
+        <option>WMC de Cartografía Básica</option>
+        <option>WMC de Cartografía Básica</option>
+      </select>
+    </div>
+    <!-- /Select WMS -->
+
+
+    <!-- Nav -->
+    <ul class="nav navbar-nav calcite-nav">
+      <li class="active"><a id="mapNav" class="hidden-xs hidden-sm" href="#mapTab"
+          aria-controls="mapTab" aria-expanded="true" role="tab" data-toggle="tab"
+          data-tooltip="tip" title="2D View" data-placement="bottom">2D</a></li>
+      <li><a id="sceneNav" class="hidden-xs hidden-sm" href="#sceneTab"
+          aria-controls="sceneTab" role="tab" data-toggle="tab" data-tooltip="tip"
+          title="3D View" data-placement="bottom">3D</a></li>
+      <li>
+        <div class="calcite-navbar-search calcite-search-expander">
+          <div id="searchWidgetDiv"></div>
+        </div>
+      </li>
+    </ul>
+  </nav>
+  <!--/.calcite-navbar -->
+
+  <!-- Map  -->
+
+  <div class="calcite-map calcite-map-absolute">
+    <div id="tabContainer" class="tab-content">
+      <div id="mapTab" class="tab-pane fade in active" role="tabpanel">
+        <div id="mapViewDiv"></div>
+        <div id="topbar">
+          <button class="action-button esri-icon-minus" id="distanceButton" type="button"
+            title="Measure distance between two or more points"></button>
+          <button class="action-button esri-icon-polygon" id="areaButton" type="button"
+            title="Measure area"></button>
+          <button class="action-button esri-icon-polyline" id="areaButton" type="button"
+            title="Measure area"></button>
+          <button class="action-button  esri-icon-printer" id="areaButton" type="button"
+            title="Measure area"></button>
+          <button class="action-button  esri-icon-zoom-in-magnifying-glass" id="areaButton" type="button"
+            title="Measure area"></button>
+          <button class="action-button  esri-icon-zoom-out-magnifying-glass" id="areaButton" type="button"
+            title="Measure area"></button>
+        </div>
+      </div>
+      <div id="sceneTab" class="tab-pane fade" role="tabpanel">
+  <!--sceneViewDiv -->
+        <div id="sceneViewDiv">
+          <button id="screenshotBtn" class="action-button esri-widget" aria-label="Select screenshot area"
+          title="Select screenshot area">Seleccione la Area a Imprimir</button>
+        </div>
+        <div id="screenshotDiv" class="hide">
+            <img class="js-screenshot-image">
+            <div>
+              <label>Set a text to be displayed on the image: </label><input type="text"
+                placeholder="Image text" id="textInput" autofocus>
+            </div>
+            <button id="downloadBtn" class="action-button" aria-label="Download image"
+              title="Download image">Download image</button>
+            <button id="closeBtn" class="action-button" aria-label="Back to webscene"
+              title="Back to webscene">Back to webscene</button>
+          </div>
+          <div id="maskDiv" class="hide screenshotCursor"></div>
+      <!--/sceneViewDiv -->
+
+
+    </div>
+  </div>
+
+  <!-- Panels -->
+
+  <div class="calcite-panels calcite-panels-right calcite-text-light calcite-bg-dark panel-group">
+
+    <!-- Basemaps Panel -->
+
+    <div id="panelBasemaps" class="panel collapse">
+      <div id="headingBasemaps" class="panel-heading" role="tab">
+        <div class="panel-title">
+          <a class="panel-toggle collapsed" role="button" data-toggle="collapse"
+            href="#collapseBasemaps" aria-expanded="false" aria-controls="collapseBasemaps"><span
+              class="glyphicon glyphicon-th-large" aria-hidden="true"></span><span
+              class="panel-label">Basemaps</span></a>
+          <a class="panel-close" role="button" data-toggle="collapse"
+            data-target="#panelBasemaps"><span class="esri-icon esri-icon-close"
+              aria-hidden="true"></span></a>
+        </div>
+      </div>
+      <div id="collapseBasemaps" class="panel-collapse collapse" role="tabpanel"
+        aria-labelledby="headingBasemaps">
+        <div class="panel-body">
+          <div id="basemapPanelDiv"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Panel Settings -->
+
+    <div id="panelSettings" class="panel panel-map collapse">
+      <div id="headingSettings" class="panel-heading">
+        <div class="panel-title">
+          <a class="panel-toggle" role="button" data-toggle="collapse" href="#collapseSettings"
+            data-parent="#panelAccordion" aria-expanded="true" aria-controls="collapseSettings"><span
+              class="glyphicon glyphicon-cog" aria-hidden="true"></span><span
+              class="panel-label">Settings</span></a>
+          <a class="panel-close" role="button" data-toggle="collapse"
+            data-target="#panelSettings"><span class="esri-icon esri-icon-close"
+              aria-hidden="true"></span></a>
+        </div>
+      </div>
+      <div id="collapseSettings" class="panel-collapse collapse" role="tabpanel"
+        aria-labelledby="headingSettings">
+        <div class="panel-body">
+          <div class="form-horizontal">
+
+            <!-- Widgets -->
+
+            <div class="form-group">
+              <label for="settingsWidgets" class="col-xs-3 control-label">Widgets</label>
+              <div class="col-xs-9">
+                <select id="settingsWidgets" class="form-control">
+                  <option value="calcite-widgets-dark">Calcite Dark</option>
+                  <option value="calcite-widgets-light" selected>Calcite Light</option>
+                </select>
+              </div>
+            </div>
+            
+
+            <!-- Layout -->
+
+            <div class="form-group">
+              <label for="settingsLayout" class="col-xs-3 control-label">Layout</label>
+              <div class="col-xs-9">
+                <select id="settingsLayout" class="form-control">
+                  <option value="calcite-nav-top" data-nav="navbar-fixed-top"
+                    selected>Top</option>
+                  <option value="calcite-nav-bottom" data-nav="navbar-fixed-bottom">Bottom</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /.calcite-panels -->
+
+
+
+  <script src="js/configuration.js"></script>
+  
+
+  <!-- ArcGIS JS 4 -->
+  <script src="https://js.arcgis.com/4.10/"></script>
+   <!--<script src="js/print.js"></script>-->
+  <script src="js/myApp.js"></script>
+ 
+ 
+
+</body>
+</html>
