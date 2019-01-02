@@ -75,7 +75,14 @@ require([
    *
    ******************************************************************/
 
- 
+   //KML
+  var kmls = [];
+  kmls[0] = "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedVerde.kmz";
+  kmls[1] = "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedNaranja.kmz";
+  kmls[2] = "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedRoja.kmz";
+  kmls[3] = "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedAmarilla.kmz";
+  kmls[4] = "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedAzul.kmz";
+
   const layerKmlRojo = new KMLLayer({
     url: "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedRoja.kmz"
   });
@@ -91,6 +98,8 @@ require([
   const layerKmlAmarilla = new KMLLayer({
     url: "http://apli.bizkaia.net/APPS/DANOK/GHCA/TRAMOS/RedAmarilla.kmz"
   });
+  // CIERRE KML
+  
 
   const layerTouristInfo = new WMSLayer("http://www.geobilbao.eus/WMS_Turismo/wmservice.aspx?request=getCapabilities&service=wms");
 
@@ -134,8 +143,10 @@ require([
       new TileLayer("http://arcgis.bizkaia.net/arcgis/rest/services/ORTOFOTOS/GOBIERNO_VASCO_2017_AMPLIADO/MapServer")
     ]
   });
-
     // CIERRE ORTOFOTOS
+
+
+
 
   var activeWidget = null;
  

@@ -76,7 +76,7 @@
     <!-- Select Ortofoto -->
     <div  class="calcite-title offset-md-3">
       <label for="exampleFormControlSelect1"></label>
-      <select class="form-control" id="cargarOrtofotos" onchange="selectOrtofotos(this.value);" >
+      <select class="form-control" onchange="selectOrtofotos(this.value);" >
         <option>Ortofotos</option>
         <option value="1" >Ortofoto 1945 GV</option>
         <option value="2">Ortofoto 1956 GV</option>
@@ -106,13 +106,13 @@
     <!-- Select KML -->
     <div  class="calcite-title ">
       <label for="exampleFormControlSelect1"></label>
-      <select class="form-control" id="exampleFormControlSelect1">
+      <select class="form-control" onchange="selectKmls(this.value);">
         <option>KML</option>
-        <option>Red Verde</option>
-        <option>Red Naranja</option>
-        <option>Red Roja</option>
-        <option>Red Amarilla</option>
-        <option>Red Azul</option>
+        <option value="0">Red Verde</option>
+        <option value="1">Red Naranja</option>
+        <option value="2">Red Roja</option>
+        <option value="3">Red Amarilla</option>
+        <option value="4">Red Azul</option>
       </select>
     </div>
     <!-- /Select KML -->
